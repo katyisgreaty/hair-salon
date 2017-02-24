@@ -63,6 +63,19 @@ namespace HairSalon
             Assert.Equal(testId, result);
         }
 
+        [Fact]
+        public void GetAll_ReturnListOfAllClients_true()
+        {
+            Client firstClient = new Client("Bob", 3);
+            Client secondClient = new Client("Bill", 1);
+            firstClient.Save();
+            secondClient.Save();
+
+            List<Client> testClientList = new List<Client> {firstClient, secondClient};
+            List<Client> resultClientList = Client.GetAll();
+            Assert.Equal(testClientList, resultClientList);
+        }
+
 
 
 
