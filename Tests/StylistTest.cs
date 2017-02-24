@@ -57,6 +57,24 @@ namespace HairSalon
         }
 
         [Fact]
+        public void GetClients_ReturnListOfClientsForSpecificStylist_true()
+        {
+            Stylist testStylist = new Stylist("Cath", "short hair", 7);
+            testStylist.Save();
+
+            Client firstClient = new Client("fred", testStylist.GetId());
+            firstClient.Save();
+            Client secondClient = new Client("betty", testStylist.GetId());
+            secondClient.Save();
+
+
+            List<Client> testClientList = new List<Client> {firstClient, secondClient};
+            List<Client> resultClientList = testStylist.GetClients();
+
+            Assert.Equal(testClientList, resultClientList);
+        }
+
+        [Fact]
         public void GetId_GetsIdForStylist_true()
         {
             //Arrange
