@@ -121,7 +121,7 @@ _This webpage allows the user to manage their list of stylists and stylists thro
 
 ## Known Bugs
 
-_None at this time_
+_Trying to view a stylist's page with their details and list of clients does not work; it says the dictionary is missing a key or something. Also, there is an error when you try to view a client's page as well. It says "'System.Collections.Generic.List' does not contain a definition for 'GetId'."
 
 ## Support and contact details
 

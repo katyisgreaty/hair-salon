@@ -11,7 +11,7 @@ else
   <ul>
     @foreach (var client in Model)
     {
-       <a href="/client/@clients.GetId()"><li>@client.GetName()</li></a>
+       <a href="/client/@Model.GetId()"><li>@client.GetName()</li></a>
     }
   </ul>
   <form action="/clients/delete" method="post">
