@@ -123,7 +123,27 @@ namespace HairSalon
             Assert.Equal(newName, result.GetName());
         }
 
+        [Fact]
+        public void DeleteClient_DeleteClientInDatabase_true()
+        {
+            //Arrange
+            string name1 = "Hannah";
+            Client testClient1 = new Client(name1, 1);
+            testClient1.Save();
 
+            string name2 = "John";
+            Client testClient2 = new Client(name2, 2);
+            testClient2.Save();
+
+            //Act
+            testClient1.Delete();
+            List<Client> resultClients = Client.GetAll();
+            List<Client> testClientList = new List<Client> {testClient2};
+
+            //Assert
+            Assert.Equal(testClientList, resultClients);
+
+        }
 
 
         public void Dispose()
