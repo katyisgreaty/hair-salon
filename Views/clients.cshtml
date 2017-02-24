@@ -7,15 +7,16 @@
 }
 else
 {
-  <h1>Here is your list of clients:</h1>
+  <h1>Here is the list of clients:</h1>
   <ul>
     @foreach (var client in Model)
     {
-       <a href="/client/@Model.GetId()"><li>@client.GetName()</li></a>
+      <a href='/client/@client.GetId()'><li>@client.GetName()</li></a>
     }
   </ul>
+
   <form action="/clients/delete" method="post">
-    <button type="submit" class="btn clearish">Clear all clients</button>
+    <button type="submit">Delete all clients</button>
   </form>
 }
 <p><a href="/clients/new">Add a new client</a></p>

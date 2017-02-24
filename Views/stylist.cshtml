@@ -1,32 +1,26 @@
 @{
     Layout="Shared/_Layout.cshtml";
 }
-<h1>@Model["stylist"].GetName()</h1>
-<h2>@Model["stylist"].GetName() specializes in: @Model["stylist"].GetSpecialty().</h2>
-<h2>@Model["stylist"].GetName() has been with us for @Model["stylist"].GetExperience() years.</h2>
+<h1>Stylist Name: @Model["stylist"].GetName()</h1>
+<h2>@Model["stylist"].GetName()'s specialty: @Model["stylist"].GetSpecialty()</h2>
+<h2>@Model["stylist"].GetName()'s years of experience: @Model["stylist"].GetExperience()</h2>
 
-<h2>Here are all the clients in this stylist:</h2>
+<h2>Here are all the clients who see @Model["stylist"].GetName():</h2>
 
 @if (@Model["clients"].Count == 0)
 {
-  <p>No clients have been added yet!</p>
+  <h4>No clients have been added yet!</h4>
 }
 else
 {
   <ol>
     @foreach (var client in @Model["clients"])
     {
-      <a href='/client/@client.GetId()'><li>@Model["clients"].GetName()</li></a>
+      <a href='/client/@client.GetId()'><li>@client.GetName()</li></a>
+
     }
   </ol>
 }
 
-<!-- Add if there is time for deleting a stylist functionality -->
-<!-- <form action='/stylist/delete/@Model["stylists"].GetId()' method="post">
-  <input type="hidden" name="_method" value="DELETE">
-  <button type="submit">Delete this stylist</button>
-</form>
-
-<p><a href='/stylist/edit/@Model["stylists"].GetId()'class="links">Update this stylist's information</a></p> -->
 <p><a href="/clients/new">Add a new client</a></p>
 <p><a href="/">Return to Main Page</a></p>
