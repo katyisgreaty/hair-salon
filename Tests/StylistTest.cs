@@ -73,6 +73,20 @@ namespace HairSalon
             Assert.Equal(testId, result);
         }
 
+        [Fact]
+        public void Find_FindsStylistInDatabase_true()
+        {
+            //Arrange
+            Stylist testStylist = new Stylist("Aretha" ,"curly", 4);
+            testStylist.Save();
+
+            //Act
+            Stylist foundStylist = Stylist.Find(testStylist.GetId());
+
+            //Assert
+            Assert.Equal(testStylist, foundStylist);
+        }
+
 
         public void Dispose()
         {
