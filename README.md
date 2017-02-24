@@ -75,6 +75,10 @@ _This webpage allows the user to manage their list of stylists and stylists thro
     * input: Sandra, Shelley, Tom, Kendra
     * output: Sandra, Shelley, Tom, Kendra
 
+* The find method will return the client in the database.
+    * input: Hannah
+    * output: Hannah
+
 * When the user updates the name of a client, the update method will return the updated info
     * input: Big T replacing Tom
     * output: Big T
