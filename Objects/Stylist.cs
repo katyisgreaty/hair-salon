@@ -70,6 +70,22 @@ namespace HairSalon
             return allStylists;
         }
 
+        public override bool Equals(System.Object otherStylist)
+        {
+            if (!(otherStylist is Stylist))
+            {
+                return false;
+            }
+            else
+            {
+                Stylist newStylist = (Stylist) otherStylist;
+                bool idEquality = this.GetId() == newStylist.GetId();
+                bool nameEquality = this.GetName() == newStylist.GetName();
+                bool specialtyEquality = this.GetSpecialty() == newStylist.GetSpecialty();
+                bool experienceEquality = this.GetExperience() == newStylist.GetExperience();
+                return (idEquality && nameEquality && specialtyEquality && experienceEquality);
+            }
+        }
 
 
 
