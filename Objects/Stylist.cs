@@ -87,6 +87,40 @@ namespace HairSalon
             }
         }
 
+        public void Save()
+        {
+            SqlConnection conn = DB.Connection();
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO stylists (name, specialty, experience) OUTPUT INSERTED.id VALUES (@StylistName, @StylistSpecialty, @StylistExperience);", conn);
+
+            SqlParameter nameParameter = new SqlParameter("@StylistName", this.GetName());
+
+            SqlParameter specialtyParameter = new SqlParameter("@StylistSpecialty", this.GetSpecialty());
+
+            SqlParameter experienceParameter = new SqlParameter("@StylistExperience", this.GetExperience());
+
+            cmd.Parameters.Add(nameParameter);
+            cmd.Parameters.Add(specialtyParameter);
+            cmd.Parameters.Add(experienceParameter);
+
+            SqlDataReader rdr = cmd.ExecuteReader();
+
+            while(rdr.Read())
+            {
+                this._id = rdr.GetInt32(0);
+            }
+            if (rdr != null)
+            {
+                rdr.Close();
+            }
+            if (conn != null)
+            {
+                conn.Close();
+            }
+        }
+
+
 
 
         public static void DeleteAll()
