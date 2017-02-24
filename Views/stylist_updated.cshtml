@@ -3,8 +3,9 @@
 }
 
 <h1>Your stylist's information has been updated, and is now:</h1>
-<h1>@stylist.GetName()</h1>
-<h2>Specialty: @stylist.GetSpecialty()</h2>
-<h2>@stylist.GetExperience() years of experience</h2>
+<h1>@Model.GetName()</h1>
+<h2>Specialty: @Model.GetSpecialty()</h2>
+<h2>@Model.GetExperience() years of experience</h2>
 
+<p><a href="/stylist/edit/@Model.GetId()" class="links">Update this stylist's information, again</a></p>
 <p><a href="/" class="links">Go back home</a></p>
