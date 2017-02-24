@@ -142,7 +142,6 @@ namespace HairSalon
 
             //Assert
             Assert.Equal(testClientList, resultClients);
-
         }
 
 

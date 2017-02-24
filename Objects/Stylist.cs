@@ -227,7 +227,51 @@ namespace HairSalon
             return clients;
         }
 
+        public void UpdateProperties(string newName, string newSpecialty, int newExperience)
+       {
+           SqlConnection conn = DB.Connection();
+           conn.Open();
 
+           SqlCommand cmd = new SqlCommand("UPDATE stylists SET name = @NewName, specialty = @NewSpecialty, experience = @NewExperience OUTPUT INSERTED.* WHERE id = @StylistId;", conn);
+
+           SqlParameter newNameParameter = new SqlParameter();
+           newNameParameter.ParameterName = "@NewName";
+           newNameParameter.Value = newName;
+           cmd.Parameters.Add(newNameParameter);
+
+           SqlParameter newExperienceParameter = new SqlParameter();
+           newExperienceParameter.ParameterName = "@NewExperience";
+           newExperienceParameter.Value = newExperience;
+           cmd.Parameters.Add(newExperienceParameter);
+
+           SqlParameter newSpecialtyParameter = new SqlParameter();
+           newSpecialtyParameter.ParameterName = "@NewSpecialty";
+           newSpecialtyParameter.Value = newSpecialty;
+           cmd.Parameters.Add(newSpecialtyParameter);
+
+           SqlParameter stylistIdParameter = new SqlParameter();
+           stylistIdParameter.ParameterName = "@StylistId";
+           stylistIdParameter.Value = this.GetId();
+           cmd.Parameters.Add(stylistIdParameter);
+           SqlDataReader rdr = cmd.ExecuteReader();
+
+           while(rdr.Read())
+           {
+               this._name = rdr.GetString(1);
+               this._specialty = rdr.GetString(2);
+               this._experience = rdr.GetInt32(3);
+           }
+
+           if (rdr != null)
+           {
+               rdr.Close();
+           }
+
+           if (conn != null)
+           {
+               conn.Close();
+           }
+       }
 
 
         public static void DeleteAll()
