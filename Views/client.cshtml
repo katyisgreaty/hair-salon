@@ -1,0 +1,18 @@
+@{
+    Layout="Shared/_Layout.cshtml";
+}
+<h1 class="restaurant-name">@Model.GetName()</h1>
+  <h3 class="restauranttext">@Model.GetPrice()</h3>
+  <h3 class="restauranttext">@Model.GetVibe()</h3>
+
+
+
+  <form action="/restaurant/delete/@Model.GetId()" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit" class="btn clearish">Delete this restaurant</button>
+  </form>
+
+  <p><a href="/restaurant/edit/@Model.GetId()" class="links">Update this restaurant's information</a></p>
+  <p id="spacebutton"><a href="/restaurants/new" class="links">Add another restaurant</a></p>
+  <p><a href="/" class="links">Go back home</a></p>
+</div>
