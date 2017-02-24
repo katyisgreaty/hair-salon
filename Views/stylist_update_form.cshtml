@@ -1,0 +1,20 @@
+@{
+    Layout="Shared/_Layout.cshtml";
+}
+
+<h1 class="stylist-name">Update information for @Model.GetName()</h1>
+<form action="/stylists/updated" method="post">
+    <input type="hidden" name="_method" value="PATCH">
+    <p>The old name on file for this stylist was: @Model.GetName()</p>
+    <label for="stylist-name">If you'd like to update their name, enter the new name here:</label>
+    <input id="stylist-name" name="stylist-name" type="text">
+    <p>The old specialty on file for this stylist was: @Model.GetName()</p>
+    <label for="stylist-specialty">If you'd like to update their specialty, enter the new specialty here:</label>
+    <input id="stylist-specialty" name="stylist-specialty" type="text">
+    <p>The old number of years of experience on file for this stylist was: @Model.GetName()</p>
+    <label for="stylist-name">If you'd like to update their years of experience, enter the new years of experience here:</label>
+    <input id="stylist-name" name="stylist-name" type="number">
+    <button type="submit" class="btn clearish">Update this stylist</button>
+</form>
+
+    <p><a href="/" class="links">Go back home</a></p>
