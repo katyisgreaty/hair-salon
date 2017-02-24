@@ -56,6 +56,23 @@ namespace HairSalon
             Assert.Equal(testStylistList, resultStylistList);
         }
 
+        [Fact]
+        public void GetId_GetsIdForStylist_true()
+        {
+            //Arrange
+            Stylist testStylist = new Stylist("Wanda", "natural hair", 12);
+            testStylist.Save();
+
+            //Act
+            Stylist savedStylist = Stylist.GetAll()[0];
+
+            int result = savedStylist.GetId();
+            int testId = testStylist.GetId();
+
+            //Assert
+            Assert.Equal(testId, result);
+        }
+
 
         public void Dispose()
         {
