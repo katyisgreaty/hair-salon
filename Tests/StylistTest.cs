@@ -108,40 +108,65 @@ namespace HairSalon
         [Fact]
         public void FindByName_FindsStylistInDatabaseByName_true()
         {
-           //Arrange
-           Stylist testStylist = new Stylist("Wanda", "natural hair", 12);
-           testStylist.Save();
+            //Arrange
+            Stylist testStylist = new Stylist("Wanda", "natural hair", 12);
+            testStylist.Save();
 
-           //Act
-           Stylist foundStylist = Stylist.FindByName(testStylist.GetName());
+            //Act
+            Stylist foundStylist = Stylist.FindByName(testStylist.GetName());
 
-           //Assert
-           Assert.Equal(testStylist, foundStylist);
+            //Assert
+            Assert.Equal(testStylist, foundStylist);
         }
 
         [Fact]
-       public void UpdateProperties_UpdatePropertiesInDatabase_true()
-       {
-           //Arrange
-           string name = "Darlene";
-           string specialty = "color";
-           int experience = 3;
+        public void UpdateProperties_UpdatePropertiesInDatabase_true()
+        {
+            //Arrange
+            string name = "Darlene";
+            string specialty = "color";
+            int experience = 3;
 
-           Stylist testStylist = new Stylist(name, specialty, experience);
-           testStylist.Save();
-           string newName = "Darla";
-           string newSpecialty = "highlights";
-           int newExperience = 4;
+            Stylist testStylist = new Stylist(name, specialty, experience);
+            testStylist.Save();
+            string newName = "Darla";
+            string newSpecialty = "highlights";
+            int newExperience = 4;
 
-           //Act
-           testStylist.UpdateProperties(newName, newSpecialty, newExperience);
-           Stylist result = Stylist.GetAll()[0];
+            //Act
+            testStylist.UpdateProperties(newName, newSpecialty, newExperience);
+            Stylist result = Stylist.GetAll()[0];
 
-           //Assert
-           Assert.Equal(testStylist, result);
-           Assert.Equal(newName, result.GetName());
-       }
+            //Assert
+            Assert.Equal(testStylist, result);
+            Assert.Equal(newName, result.GetName());
+        }
 
+        [Fact]
+        public void DeleteStylist_DeleteStylistInDatabase_true()
+        {
+            //Arrange
+            string name1 = "Mira";
+            string specialty1 = "curls";
+            int experience1 = 7;
+            Stylist testStylist1 = new Stylist(name1, specialty1, experience1);
+            testStylist1.Save();
+
+            string name2 = "Macklemore";
+            string specialty2 = "flat tops, fades";
+            int experience2 = 4;
+            Stylist testStylist2 = new Stylist(name2, specialty2, experience2);
+            testStylist2.Save();
+
+            //Act
+            testStylist1.Delete();
+            List<Stylist> resultStylists = Stylist.GetAll();
+            List<Stylist> testStylistList = new List<Stylist> {testStylist2};
+
+            //Assert
+            Assert.Equal(testStylistList, resultStylists);
+
+        }
 
         public void Dispose()
         {
