@@ -13,11 +13,23 @@ namespace HairSalon
             DBConfiguration.ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=hair_salon_test;Integrated Security=SSPI;";
         }
 
+        [Fact]
+        public void GetAll_StylistsEmptyAtFirst_true()
+        {
+            int result = Stylist.GetAll().Count;
+
+            Assert.Equal(0, result);
+        }
+
+
+
+
+
 
         public void Dispose()
         {
-            Restaurant.DeleteAll();
-            Cuisine.DeleteAll();
+            Stylist.DeleteAll();
+            // Client.DeleteAll();
         }
     }
 }

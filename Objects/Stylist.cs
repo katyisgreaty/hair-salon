@@ -45,7 +45,7 @@ namespace HairSalon
             SqlConnection conn = DB.Connection();
             conn.Open();
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM stylist;", conn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM stylists;", conn);
             SqlDataReader rdr = cmd.ExecuteReader();
 
             while(rdr.Read())
@@ -73,13 +73,11 @@ namespace HairSalon
 
 
 
-
-
         public static void DeleteAll()
         {
             SqlConnection conn = DB.Connection();
             conn.Open();
-            SqlCommand cmd = new SqlCommand("DELETE FROM stylist;", conn);
+            SqlCommand cmd = new SqlCommand("DELETE FROM stylists;", conn);
             cmd.ExecuteNonQuery();
             conn.Close();
         }
