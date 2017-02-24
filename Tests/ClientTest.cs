@@ -21,6 +21,21 @@ namespace HairSalon
             Assert.Equal(0, result);
         }
 
+        [Fact]
+        public void Equals_ReturnsTrueForSameName_true()
+        {
+            //Arrange, Act
+           Client firstClient = new Client("Bob", 1);
+           Client secondClient = new Client("Bob", 1);
+
+           //Assert
+           Assert.Equal(firstClient, secondClient);
+        }
+
+
+
+
+
 
         public void Dispose()
        {
