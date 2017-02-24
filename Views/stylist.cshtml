@@ -1,22 +1,22 @@
 @{
     Layout="Shared/_Layout.cshtml";
 }
-<h1>@stylists.GetName()</h1>
-<h2>@stylists.GetName() specializes in: @stylists.GetSpecialty().</h2>
-<h2>@stylists.GetName() has been with us for @stylists.GetExperience() years.</h2>
+<h1>@Model.GetName()</h1>
+<h2>@Model.GetName() specializes in: @Model.GetSpecialty().</h2>
+<h2>@Model.GetName() has been with us for @Model.GetExperience() years.</h2>
 
 <h2>Here are all the clients in this stylist:</h2>
 
-@if (@Model["clients"].Count == 0)
+@if (@Model["client"].Count == 0)
 {
   <p>No clients have been added yet!</p>
 }
 else
 {
   <ol>
-    @foreach (var client in @Model["clients"])
+    @foreach (var client in @Model["client"])
     {
-      <a href='/client/@clients.GetId()'><li>@clients.GetName()</li></a>
+      <a href='/client/@client.GetId()'><li>@Model["client"].GetName()</li></a>
     }
   </ol>
 }

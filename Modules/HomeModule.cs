@@ -26,10 +26,11 @@ namespace HairSalon
             Get["/stylists/new"] = _ => {
                 return View["stylist_form.cshtml"];
             };
+
             Post["/stylists/new"] = _ => {
                 Stylist newStylist = new Stylist(Request.Form["stylist-name"], Request.Form["stylist-specialty"], Request.Form["stylist-experience"]);
                 newStylist.Save();
-                return View["success.cshtml"];
+                return View["success.cshtml", newStylist];
             };
 
             Get["/clients/new"] = _ => {
