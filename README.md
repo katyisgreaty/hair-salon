@@ -51,6 +51,10 @@ _This webpage allows the user to manage their list of stylists and stylists thro
     * input: Teela
     * output: Teela
 
+* The get name, get specialty, and get experience methods will return a stylist's details when a user clicks on that stylist
+    * input: Hallie
+    * output: Hallie, curly hair, 3 years
+
 * The get all method will return an empty list if the list of clients is empty in the beginning
     * input: nothing/null
     * output: empty string
@@ -101,10 +105,6 @@ _This webpage allows the user to manage their list of stylists and stylists thro
 * The search method can search for stylists by name
     * input: Hallie
     * output: Hallie
-
-* The get name, get specialty, and get experience methods will return a stylist's details when a user clicks on that stylist
-    * input: Hallie
-    * output: Hallie, curly hair, 3 years
 
 * The get details method will return a client's details when a user clicks on that client
     * input: Sandra
