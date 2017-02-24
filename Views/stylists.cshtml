@@ -1,7 +1,9 @@
 @{
     Layout="Shared/_Layout.cshtml";
 }
-<h1>All stylists</h1>
+<div class="scoochright">
+
+<h1 class="lefthead"><img src="../Content/pony2.png" alt="pony picture" class="icon"/>All stylists<img src="../Content/pony3.png" alt="pony picture" class="icon"/></h1>
 @if (@Model.Count == 0)
 {
   <p>There are no stylists yet.</p>
@@ -14,3 +16,4 @@
 </ul>
 <a href="/stylists/new">Add new stylist</a>
   <p><a href="/" class="links">Go back home</a></p>
+</div>

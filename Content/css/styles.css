@@ -1,0 +1,97 @@
+.clearish {
+    background-color: transparent;
+    border-style: solid;
+    border-color: #EC84A8 #EC84A8;
+}
+.container {
+    width: 95%;
+    margin-left: 100px;
+}
+
+.col-md-4 {
+    text-align: center;
+    margin-top: 300px;
+}
+
+body {
+    background-image: url("http://wallpapercave.com/wp/CRmZy32.png") ;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Muli', sans-serif;
+    /*text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;*/
+    font-size: 36px;
+    color: white;
+}
+
+.jumbotron {
+    background-image: url("https://w-dog.net/wallpapers/7/1/480295148605437/my-little-pony-ponies-kindness-silhouette-rainbow-dash.jpg");
+    /*background-color: #0D4E60;*/
+    background-size: 100% 600px;
+    background-position: center;
+    height: 400px;
+    color: #EC84A8;
+    font-family: 'Fredoka One', cursive;
+    font-size: 130px;
+    text-align: center;
+    padding-top: 150px;
+    /*padding-right: 100px;*/
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+.btn {
+    font-size: 22px;
+    color: #EC84A8
+    #7B86B6;
+}
+
+a {
+    color: white;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 80px;
+    text-align: center;
+    color: #354DA0;
+    font-weight: bold;
+}
+
+.linkspaceleft {
+    text-align: justify;
+    margin-left: 150px;
+    margin-top: 100px;
+    font-size: 70px;
+    text-shadow: 2px 0 0 #354DA0, -2px 0 0 #354DA0, 0 2px 0 #354DA0, 0 -2px 0 #354DA0, 1px 1px #354DA0, -1px -1px 0 #354DA0, 1px -1px 0 #354DA0, -1px 1px 0 #354DA0;
+}
+
+.icon {
+    height: 140px;
+}
+
+/*.lefthead {
+    text-align: left;
+}*/
+
+.scoochright {
+    text-align: justify;
+}
+
+form {
+    color: #354DA0;
+}
+
+label {
+    color: white;
+}
+
+ul {
+    list-style-type: square;
+}
+
+
+font-family: 'Raleway', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Muli', sans-serif;
+font-family: 'Federo', sans-serif;
+font-family: 'Fredoka One', cursive;

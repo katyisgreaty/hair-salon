@@ -7,7 +7,7 @@
 }
 else
 {
-  <h1>Here is the list of clients:</h1>
+  <h1><img src="../Content/pony2.png" alt="pony picture" class="icon"/>Here is the list of clients:<img src="../Content/pony4.png" alt="pony picture" class="icon"/></h1>
   <ul>
     @foreach (var client in Model)
     {
@@ -16,7 +16,7 @@ else
   </ul>
 
   <form action="/clients/delete" method="post">
-    <button type="submit">Delete all clients</button>
+    <button type="submit" class="btn clearish">Delete all clients</button>
   </form>
 }
 <p><a href="/clients/new">Add a new client</a></p>
