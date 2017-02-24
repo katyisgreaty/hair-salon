@@ -6,9 +6,9 @@ using System.Data.SqlClient;
 
 namespace HairSalon
 {
-    public class HairSalonTest : IDisposable
+    public class StylistTest : IDisposable
     {
-        public HairSalonTest()
+        public StylistTest()
         {
             DBConfiguration.ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=hair_salon_test;Integrated Security=SSPI;";
         }
@@ -105,7 +105,7 @@ namespace HairSalon
         public void Dispose()
         {
             Stylist.DeleteAll();
-            // Client.DeleteAll();
+            Client.DeleteAll();
         }
     }
 }
