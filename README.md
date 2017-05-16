@@ -26,7 +26,7 @@ _This webpage allows the user to manage their list of stylists and stylists thro
 
 
 ## Specifications
-
+ 
 * The get all method will return an empty list if the list of stylists is empty in the beginning
     * input: nothing/null
     * output: empty string
